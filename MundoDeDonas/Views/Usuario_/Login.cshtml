@@ -1,0 +1,71 @@
+﻿@model MundoDeDonas.Models.Entidades.Usuario
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login</title>
+    <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
+    <link rel="stylesheet" href="~/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/custom-radio.css">
+    <link rel="stylesheet" href="~/assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="~/assets/css/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/assets/img/favicon-32x32.png">
+</head>
+
+<body style="background: url(&quot;/assets/img/background-image.png&quot;) center / cover no-repeat;">
+    <div style="margin-left: auto;margin-right: auto;margin-top: 90px;width: 1025px;box-shadow: 0px 3px 6px rgba(0,0,0,0.25);min-width: 1025px;max-width: 1025px;height: 500px;">
+        @using (Html.BeginForm("Login", "Usuario_", FormMethod.Post, new { onSubmit = "return Validar();" })) {
+            <div style="float: left;width: 575px;background: #ffffff;height: 500px;padding: 20px 0px 20px;border-color: rgb(0,0,0);">
+                <div style="background: #ffffff;width: 240px;height: 190px;margin-top: -px;margin-right: 0px;margin-left: 160px;"><a href="index.html" style="display: block;"><img src="/assets/img/login-stuff/logo.png" style="margin-left: 51px;padding: 16px 0px 16px;margin-top: 7px;width: 175px;filter: drop-shadow(0 3px rgba(0,0,0,0.16);"></a></div>
+                <div class="form-group" style="width: 320px;height: 38px;margin-left: 130px;margin-top: 0px;border-color: rgb(0, 0, 0);border-top-color: rgb(0,;border-right-color: 0,;border-bottom-color: 0);border-left-color: 0,;">
+                    @Html.TextBoxFor(x => x.Email, new { name = "Email", type = "text", id = "Email", placeholder = "Email", style = "width: 320px;height: 38px;margin-top: 44px;background: url(&quot;/assets/img/login-stuff/email.svg&quot;) 95% / 20px no-repeat;padding-left: 10px;border-radius: 5px;border: 2px solid #C9C9C9;", autocomplete = "off" })
+                </div>
+                <div class="form-group" style="width: 320 px;height: 38px;margin-top: 63px;margin-left: 130px;border-color: rgb (0,0,0);">
+                    @Html.TextBoxFor(x => x.Contrasenia, new { name = "Contrasenia", type = "text", id = "Contrasenia", placeholder = "Password", style = "width: 320px;height: 38px;color: rgb(0,0,0);margin-top: 0;background: url(&quot;/assets/img/login-stuff/candado-cerrado.svg&quot;) 95% / 20px no-repeat;padding-left: 10px;padding-top: 0px;padding-right: 2px;border-radius: 5px;border: 2px solid #C9C9C9;" })
+                </div>
+                <a class="forgot" href="#" style="color: rgb(135,46,140);font-size: 14px;text-align: right;font-family: 'Open Sans', sans-serif;height: 4px;margin-top: 23px;width: 240px;margin-left: 285px;font-style: normal;font-weight: bold;">¿Olvidaste tu contraseña?</a>
+                <button class="btn btn-primary btn-block" type="submit" style="margin-top: 15px;width: 320px;height: 46px;margin-left: 128px;text-align: left;border-style: none;background: url(&quot;/assets/img/login-stuff/iniciar-sesion.svg&quot;) 95% / 20px no-repeat, #ffcc48;">Iniciar sesión&nbsp;</button>
+            </div>
+        }
+        <div style="width: 450px;float: left;height: 500px;background: url(&quot;/assets/img/login-stuff/login-background.png&quot;), linear-gradient(rgb(255,232,243) 0%, rgb(254,164,206) 100%), #ffffff;padding-top: 30px;">
+            <div style="background: rgba(129,46,46,0);height: 32px;">
+                <form action="sign%20up.html">
+                    <button class="btn btn-primary" type="submit" style="height: 38px;color: rgb(135,46,140);background: url(&quot;/assets/img/login-stuff/donuts&coffee.svg&quot;) 10px / 25px no-repeat, rgb(255,255,255);float: right;margin-right: 20px;width: 110px;padding-left: 40px;border-style: none;float: right;box-shadow: 0px 3px 6px rgba(0,0,0,0.16);">Sign up</button>
+                    <span style="font-family: 'Open Sans', sans-serif;color: rgb(255,255,255);float: right;text-align: center;padding: 0 7px;padding-top: 13px;text-shadow: 0px 3px 6px rgba(0,0,0,0.16);font-weight: bold;">¿Aun no tienes una cuenta?</span>
+                </form>
+            </div>
+            <div style="width: 375px;height: 115px;background: rgba(184,184,184,0);margin-left: 50px;margin-top: 53px;">
+                <p style="color: rgb(255,255,255);font-family: Sacramento, cursive;font-size: 82px;text-shadow: 0px 3px 6px rgba(0,0,0,0.16);">¡Bienvenido!</p>
+            </div><img src="/assets/img/login-stuff/donut&coffee-x4.png" style="margin: 24px;margin-left: 66px;width: 360px;margin-top: 36px;">
+        </div>
+    </div>
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/make-script.js"></script>
+    <script type="text/javascript">
+        function Validar() {
+            //VALIDACIONES
+            if ($("#Contrasenia").val() == "") {
+                alert("Indique la contraseña");
+                return false;
+            }
+            if ($("#Email").val() == "") {
+                alert("Indique el Email");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

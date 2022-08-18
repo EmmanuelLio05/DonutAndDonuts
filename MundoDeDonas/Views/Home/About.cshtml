@@ -1,0 +1,82 @@
+﻿@{
+    string sName = "";
+
+    if (System.Web.HttpContext.Current.Session["Id"] == null) {
+        sName = "Login";
+    } else {
+        sName = (string)System.Web.HttpContext.Current.Session["Nombre"];
+    }
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Quienes somos</title>
+    <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
+    <link rel="stylesheet" href="~/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/custom-radio.css">
+    <link rel="stylesheet" href="~/assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="~/assets/css/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/assets/img/favicon-32x32.png">
+</head>
+
+<body style="background: url('/assets/img/background-image.png'), #ffffff;padding-top: -823px ;">
+    <nav class="navbar navbar-light navbar-expand-md text-right navigation-clean" style="background: #ffdbec;box-shadow: 0px 3px 7px rgba(0,0,0,0.13);">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="logo-image"></div>
+            </a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">@Html.ActionLink("Inicio", "Index", "Home", null, new { @class = "nav-link active", style = "font-family: Lobster, cursive;color: rgb(125,9,101);" })</li>
+                    @*<a >inicio</a>*@
+                    <li class="nav-item">@Html.ActionLink("Crea tu Dona", "Pedido", "Pedido_", null, new { @class = "nav-link", style = "font-family: Lobster, cursive; color: rgb(125,9,101);" })</li>
+                    @*<a  href="crea.html">crea tu dona</a>*@
+                    <li class="nav-item">@Html.ActionLink("¿Quienes Somos?", "About", "Home", null, new { @class = "nav-link", style = "font-family: Lobster, cursive;color: rgb(125,9,101);" })</li>
+                    <li class="nav-item dropdown" style="font-family: Lobster, cursive;">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="color: rgb(125,9,101);">@sName</a>
+                        <div class="dropdown-menu" style="box-shadow: 2px 2px 6px rgba(0,0,0,0.16);">
+                            @{if (System.Web.HttpContext.Current.Session["Id"] == null) {
+                                    @Html.ActionLink("Login", "Login", "Usuario_", null, new { @class = "dropdown-item" })
+                                    @Html.ActionLink("Sign in", "RegistrarUsuario", "Usuario_", null, new { @class = "dropdown-item" })
+                                } else {
+                                    @Html.ActionLink("Logout", "Logout", "Usuario_", null, new { @class = "dropdown-item" })
+                                }
+                            }
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="background: url('/assets/img/about-stuff/title.png');
+        height: 220px;"></div>
+    <div style="display: flex;padding: 50px;">
+        <div style="background: #ffffff;padding: 50px;">
+            <div style="margin-bottom: 10px;"><span style="color: #8f8f8f;font-size: 54px;font-family: Sacramento, cursive;font-weight: normal;">Nos encantan los postres...</span></div>
+            <div>
+                <p>
+                    En 2020 nos surge la idea de que las personas hoy en día necesitan alimentos que se amolden a lo que ellos desean, que ellos puedan crear y personalizar lo que van a degustar. Es así como nace nuestro proyecto Donuts &amp; Donuts. Donas
+                    que el usuario podrá personalizar a su gusto y que serán entregadas en la comodidad de su hogar. Hechas con ingredientes de la más alta calidad y decoradas artesanalmente preparadas al momento por lo cual la frescura es garantía. Mas
+                    que una dona somo una experiencia.<br><br>
+                </p>
+            </div>
+            <div style="font-size: 23px;display: flex;justify-content: space-between;margin-right: auto;margin-left: auto;width: 400px;">
+                <span class="d-xl-flex align-items-xl-end">Siguenos en&nbsp;</span><i class="fa fa-facebook-square" style="font-size: 70px;color: #0022ff;"></i><i class="fa fa-instagram" style="font-size: 70px;color: #ff0068;"></i><i class="fa fa-twitter"
+                                                                                                                                                                                                                                          style="font-size: 70px;color: #0099ff;"></i>
+            </div>
+        </div>
+        <div style="margin-left: -220px;margin-top: 97px;"><img src="/assets/img/about-stuff/au-friends2.png"></div>
+    </div>
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/make-script.js"></script>
+</body>
+
+</html>

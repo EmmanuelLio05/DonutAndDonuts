@@ -1,0 +1,124 @@
+﻿@model MundoDeDonas.Models.Entidades.Usuario
+
+@{
+    ViewBag.Title = "RegistrarUsuario";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>signup</title>
+    <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
+    <link rel="stylesheet" href="~/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/custom-radio.css">
+    <link rel="stylesheet" href="~/assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="~/assets/css/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/assets/img/favicon-32x32.png">
+</head>
+
+<body style="background: url(&quot;/assets/img/background-image.png&quot;), #ffffff;">
+    <div style="display: flex;height: 580px;width: 1000px;box-shadow: 0px 3px 6px rgba(33,37,41,0.16);margin: 0 auto;margin-top: 40px;">
+        <div style="background: url(&quot;/assets/img/signup-stuff/Componente%202%20–%201.png&quot;) center / cover no-repeat, #d9d9d9;width: 390px;padding: 30px;box-sizing: border-box;padding-top: 50px;">
+            <p style="color: rgb(255,255,255);font-size: 70px;font-family: Sacramento, cursive;text-shadow: 0px 3px 6px rgba(0,0,0,0.16);text-align: right;"><strong>&nbsp;¡ Regístrate !</strong><br></p>
+            <div>
+                <p style="text-shadow: 0px 3px 6px rgba(0,0,0,0.16);color: rgb(255,255,255);font-family: 'Open Sans', sans-serif;text-align: right;font-size: 18px;margin-top: 15px;"><strong>¿Aun no tienes una cuenta?&nbsp;</strong><br><strong>¡ Regístrate y empieza crear&nbsp;!</strong><br></p>
+            </div><img class="d-xl-flex" src="/assets/img/signup-stuff/donuts&cofee2.png" style="height: 260px;margin-left: 30px;float: right;margin-top: 5px;">
+        </div>
+        <div style="width: 611px;background: #ffffff;border-style: none;padding: 40px;padding-top: 65px;">
+            @using (Html.BeginForm("RegistrarUsuario", "Usuario_", FormMethod.Post, new { onSubmit = "return Validar();", @class = "contactform" })) {
+            <div style="width: 410px;margin-right: auto;margin-left: auto;">
+                <a href="index.html" style="display: block;"><img src="/assets/img/signup-stuff/logo.png" style="margin-bottom: 30px;"></a>
+                <div style="width: 100%;display: flex;justify-content: space-between;margin-bottom: 30px;">
+                    @Html.TextBoxFor(x => x.Nombre, new { name = "Nombre", type = "text", id = "Nombre", placeholder = "Nombre(s)", style = "border-radius: 5px;border-style: solid;border-color: #c9c9c9;padding: 10px;padding-bottom: 8px;padding-top: 8px;padding-left: 14px;width: 50%;", autocomplete = "off" })
+                    @Html.TextBoxFor(x => x.Apellido, new { name = "Apellido", type = "text", id = "Apellido", placeholder = "Apellido(S)", style = "border-radius: 5px;border-style: solid;border-color: #c9c9c9;padding: 10px;padding-bottom: 8px;padding-top: 8px;padding-left: 14px;width: 45%;", autocomplete = "off" })
+                </div>
+                @Html.TextBoxFor(x => x.Email, new { name = "Email", type = "text", id = "Email", placeholder = "Email", style = "border-radius: 5px;border-style: solid;border-color: #c9c9c9;padding: 10px;padding-bottom: 8px;padding-top: 8px;padding-left: 14px;width: 100%;background: url(&quot;/assets/img/signup-stuff/email.svg&quot;) 97% / 25px no-repeat;margin-bottom: 30px;", autocomplete = "off" })
+                @Html.TextBoxFor(x => x.Contrasenia, new { name = "Contrasenia", type = "password", id = "Contrasenia", placeholder = "Password", style = "width: 410px;border-radius: 5px;border-style: solid;border-color: #c9c9c9;padding: 10px;padding-bottom: 8px;padding-top: 8px;padding-left: 14px;margin-bottom: 30px;", autocomplete = "off" })
+                @Html.TextBox("Contrasenia-Repeat", "",new { name = "Contrasenia-Repeat", type = "password", id = "Contrasenia-Repeat", placeholder = "Confirmar password", style = "width: 410px;border-radius: 5px;border-style: solid;border-color: #c9c9c9;padding: 10px;padding-bottom: 8px;padding-top: 8px;padding-left: 14px;margin-bottom: 30px;", autocomplete = "off" })
+                <div style="display: flex;">
+                    <button class="btn btn-primary btn-block" type="submit" style="width: 250px;background: url(&quot;/assets/img/signup-stuff/marca-de-verificacion.svg&quot;) 95% / 20px no-repeat, rgb(224,210,135);border-style: none;text-align: left;padding-left: 14px;padding-top: 8px;padding-bottom: 8px;">Registrarse</button>
+                    <span class="d-xl-flex justify-content-xl-center align-items-xl-end" style="width: 48px;color: rgb(194,194,194);font-size: 18px;">o</span><a class="d-xl-flex align-items-xl-end" href="log%20in.html" style="color: rgb(125,9,101);font-family: 'Open Sans', sans-serif;font-weight: bold;">inicia sesión</a>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/make-script.js"></script>
+    <script type="text/javascript">
+        function Validar() {
+            //VALIDACIONES
+            if ($("#Contrasenia").val() != $("#Contrasenia-Repeat").val()) {
+                alert("La contraseña debe coincidir en ambos campos");
+                return false;
+            }
+            return true;
+        }
+
+        function abrirFormulario() {
+            VaciarFormulario();
+            $('label input:not(.notCollapsable)').closest('label').addClass('empty');
+        }
+
+        function VaciarFormulario() {
+            $("#Nombre").val("");
+            $("#Apellido").val("");
+            $("#Email").val("");
+            $("#Contrasenia").val("");
+        }
+        function CargarFormulario(Usuario) {
+            $("#Nombre").val(Usuario.Nombre);
+            $("#Apellido").val(Usuario.Apellido);
+            $("#Email").val(Usuario.Email);
+            $("#Contrasenia").val(Usuario.Contrasenia);
+            $('input').closest('label').removeClass('empty');
+        }
+        function editar(clave) {
+            $.ajax({
+                type: "GET",
+                url: "/Usuarios/ObtenerUsuario",
+                data: { "clave": clave },
+                success: function (data) {
+                    $("#modalUsuario").modal();
+                    CargarFormulario(data);
+                },
+                error: function () { alert('Ocurrió un error (Usuarios/ObtenerUsuario)') }
+            });
+        }
+    </script>
+    <!--Las funciones que manejan eventos tienen que ejecutarse hasta el final-->
+    <script type="text/javascript">
+        $('label input').keyup(function () {
+            if ($(this).val().trim() !== '') {
+                 $(this).closest('label').removeClass('empty');
+            } else {
+                 $(this).closest('label').addClass('empty');
+            }
+            $(this).val($(this).val().toUpperCase());
+        });
+        $("label input").focusin(function () {
+            $(this).closest('label').removeClass('empty');
+        });
+        $("label input").focusout(function () {
+            if ($(this).val().trim() !== '') {
+                $(this).closest('label').removeClass('empty');
+            } else {
+                $(this).closest('label').addClass('empty');
+            }
+        });
+        @*ESTE BLOQUE SE EJECUTA CUANDO SE CARGA LA PAGINA*@
+        $(document).ready(function() {
+
+        });
+        @*ESTE BLOQUE SE EJECUTA CUANDO SE MUESTRA EL MODAL*@
+        $("#modalUsuario").on('shown.bs.modal', function (event) {
+
+        });
+    </script>
+</body>
+</html>

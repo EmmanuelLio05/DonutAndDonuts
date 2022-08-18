@@ -1,0 +1,11 @@
+<svg id="cash-group" xmlns="http://www.w3.org/2000/svg" width="152.51" height="51.162" viewBox="0 0 152.51 51.162">
+  <g id="efectivo">
+    <path id="Trazado_90" data-name="Trazado 90" d="M109.169,74.7l-3.65,1.142-3.154.987H85.8L82.585,66.542,72,32.721l10.585-3.313,11.3-3.537L105.52,63.036Z" transform="translate(-72 -25.664)" fill="#379a6b"/>
+    <path id="Trazado_91" data-name="Trazado 91" d="M143.487,112.7l.79,2.525-10.1,3.162-.79-2.526-2.525.79L119.266,79.616l2.525-.79L121,76.3l10.1-3.162.79,2.525,2.525-.79,11.593,37.041Z" transform="translate(-114.054 -67.72)" fill="#44c086"/>
+    <path id="Trazado_92" data-name="Trazado 92" d="M168,24h22.935V75.162H168Z" transform="translate(-157.415 -24)" fill="#3ba673"/>
+    <path id="Trazado_93" data-name="Trazado 93" d="M213.231,97.459V100.1H202.646V97.459H200V58.646h2.646V56h10.585v2.646h2.646V97.459Z" transform="translate(-185.886 -52.472)" fill="#44c086"/>
+    <circle id="Elipse_7" data-name="Elipse 7" cx="4.453" cy="4.453" r="4.453" transform="translate(17.56 21.47)" fill="#3ba673"/>
+    <path id="Trazado_94" data-name="Trazado 94" d="M268.078,182.114v21.17H261.9a8.821,8.821,0,0,1-8.821-8.821h.018l-5.723-8.469a3.528,3.528,0,1,1,5.847-3.951l5.15,7.127h2.646V168l6.642,12.453A3.529,3.529,0,0,1,268.078,182.114Z" transform="translate(-227.501 -152.122)" fill="#f5cbaa"/>
+  </g>
+  <text id="efectivo-2" data-name="efectivo" transform="translate(53.51 36)" fill="#a4a4a4" font-size="27" font-family="OpenSans-Regular, Open Sans"><tspan x="0" y="0">efectivo</tspan></text>
+</svg>

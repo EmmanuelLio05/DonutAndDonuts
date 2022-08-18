@@ -1,0 +1,88 @@
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background-color: #eee;
+  border-radius: 50%;
+  background-image: url("../../assets/img/make-stuff/check-wb.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+}
+
+.container {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #0fe256;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  /*top: 22%;*/
+  /*left: 21%;*/
+  /*width: 15px;*/
+  /*height: 15px;*/
+  /*border-radius: 50%;*/
+}
+
+.payment-options {
+  padding: 10px 50px;
+  padding-top: 0;
+}
+
+.credit-card-form {
+  padding: 10px 50px;
+}
+
+.input-container {
+  display: flex;
+  font-family: 'Open Sans';
+  padding-bottom: 30px;
+  justify-content: space-between;
+}
+
+.input-container input {
+  padding: 20px;
+  border: 2px solid #dcdcdc;
+  height: 55px;
+}
+
+.clear-ingredients-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: rgb(235,73,64);
+  user-select: none;
+  cursor: pointer;
+}
+
+.base-preview {
+  background-image: url("../../assets/img/make-stuff/donut-layers/donut.png");
+}
+

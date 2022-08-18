@@ -1,0 +1,2 @@
+----------------The INSERT statement conflicted with the FOREIGN KEY constraint "FK__Pedido_In__PI_Id__6EF57B66". The conflict occurred in database "MundoDeDonas", table "dbo.Pedidos", column 'P_Id'.
+The statement has been terminated.
